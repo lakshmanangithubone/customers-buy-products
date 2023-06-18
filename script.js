@@ -188,6 +188,7 @@ function fillDetails(SelectedproductName, itemIdx) {
 
   let prodPrice = document.createElement("p");
   prodPrice.innerText = found.price;
+  prodPrice.classList.add("product-price");
   productNumbers.appendChild(prodPrice);
 
   let prodStock = document.createElement("p");
@@ -210,11 +211,19 @@ function fillDetails(SelectedproductName, itemIdx) {
 
   qtyInputs.forEach((qtyInput, idx) => {
     qtyInput.addEventListener("input", (e) => {
-      totalQty = e.target.value;
-      totalamount = `${totalQty * prodPrice.innerText}`;
-      amount.innerText = totalamount;
+      totalQty = qtyInputs[idx].value;
 
-      console.log(idx, e, totalQty, prodPrice.innerText);
+      const productPrices = document.querySelectorAll(".product-price");
+
+      totalamount = `${totalQty * productPrices[idx].innerText}`;
+
+      const individualAmounts = document.querySelectorAll(".individualAmount");
+
+      individualAmounts[idx].innerText = totalamount;
+
+      //   console.log(idx, e, totalQty, prodPrice.innerText);
+
+      console.log(qtyInputs[idx].value, productPrices[idx].innerText);
 
       PurchaseDetailsArrayUpdate();
     });
