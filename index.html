@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>starter file</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato:wght@400;700&family=Montserrat:wght@500&family=Open+Sans&family=Poppins:wght@500&family=Source+Serif+Pro&family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <ul class="ul">
+          <li class="li">
+            <a href="#products-customers" class="a-link highlight"> main</a>
+          </li>
+          <li class="li">
+            <a href="#cart" class="a-link"> cart</a>
+          </li>
+          <li class="li">
+            <a href="#bill" class="a-link"> bill</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="products-customers section active-page"
+        id="products-customers"
+      >
+        <div class="inner-products-customers">
+          <div class="products">
+            <form id="formone" class="formone">
+              <div class="form-group">
+                <label for="productName">product Name</label>
+                <input
+                  type="text"
+                  id="productName"
+                  name="productName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="price">price</label>
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  required
+                  max="10000"
+                />
+              </div>
+              <div class="form-group">
+                <label for="stock">total stock</label>
+                <input type="number" id="stock" name="stock" required />
+              </div>
+              <div class="form-group">
+                <label for="imageUrl">image URL</label>
+                <input type="url" id="imageUrl" name="imageUrl" required />
+              </div>
+              <button type="submit" class="formbtn">submit</button>
+            </form>
+          </div>
+          <div class="customers">
+            <form id="formtwo" class="formtwo">
+              <div class="form-group">
+                <label for="customerName">customer Name</label>
+                <input
+                  type="text"
+                  id="customerName"
+                  name="customerNname"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="address">address</label>
+                <input type="text" id="address" name="address" required />
+              </div>
+              <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" />
+              </div>
+
+              <button type="submit" class="formbtn">submit</button>
+            </form>
+          </div>
+        </div>
+
+        <button class="gotoCartBtn">go to cart</button>
+      </section>
+      <section class="cart section" id="cart">
+        <div class="select-div-customer">
+          <form class="select-form-customer"></form>
+        </div>
+
+        <div class="table-content">
+          <div class="table-heading">
+            <div class="heading">
+              <p>product</p>
+              <p>price</p>
+              <p>stock</p>
+              <p>qty</p>
+              <p>amount</p>
+            </div>
+            <p class="add-product-btn">Add product</p>
+          </div>
+          <div class="cartItems"></div>
+
+          <p>total amount : <span class="totalAmount"></span></p>
+
+          <button class="goToBillBtn">submit</button>
+        </div>
+      </section>
+      <section class="bill section" id="bill">
+        <div class="bill-content"></div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
